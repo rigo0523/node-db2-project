@@ -12,3 +12,5 @@ exports.seed = async function (knex) {
     },
   ]);
 };
+
+//test
