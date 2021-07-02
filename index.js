@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require("express");
 const server = express();
 const db = require("./db-config");
@@ -31,3 +32,13 @@ server.listen(port, () => {
 });
 
 //test
+=======
+require("dotenv").config();
+const server = require("./api/server");
+
+const port = process.env.PORT || 8000;
+
+server.listen(port, () => {
+  console.log(`***Listening on port ${port}***`);
+});
+>>>>>>> ae0ae9e9f60da95fb3c7754c90f7dcbe0b10ac57
