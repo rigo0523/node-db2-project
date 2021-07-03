@@ -1,9 +1,9 @@
 const Cars = require("../cars/cars-helper");
 
-module.exports = { getByIdMiddleware };
+module.exports = { getByID };
 
 //GET /api/cars/:id
-function getByIdMiddleware() {
+function getByID() {
   return (req, res, next) => {
     const { id } = req.params;
     Cars.getById(id)

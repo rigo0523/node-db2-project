@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getByIdMiddleware } = require("../middleware/middleware-stacks");
+const { getByID } = require("../middleware/middleware-stacks");
 
 const Cars = require("./cars-helper");
 
@@ -16,7 +16,7 @@ router.get("/", (req, res, next) => {
 });
 
 //GET /api/cars/:id
-router.get("/:id", getByIdMiddleware(), (req, res, next) => {
+router.get("/:id", getByID(), (req, res, next) => {
   res.status(200).json(req.car);
 });
 
@@ -34,7 +34,7 @@ router.post("/", (req, res, next) => {
 });
 
 //UPDATE /api/cars/:d
-router.put("/:id", getByIdMiddleware(), (req, res, next) => {
+router.put("/:id", getByID(), (req, res, next) => {
   const changes = req.body;
   const { id } = req.params;
 
@@ -46,7 +46,7 @@ router.put("/:id", getByIdMiddleware(), (req, res, next) => {
 });
 
 //DELETE /api/cars/:id
-router.delete("/:id", getByIdMiddleware(), (req, res, next) => {
+router.delete("/:id", getByID(), (req, res, next) => {
   const { id } = req.params;
   const carDeleted = req.body;
   console.log("Deleted ---->", carDeleted);

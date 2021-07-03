@@ -1,21 +1,7 @@
-<<<<<<< HEAD
-// Update with your config settings.
-
-=======
->>>>>>> ae0ae9e9f60da95fb3c7754c90f7dcbe0b10ac57
 module.exports = {
   development: {
     client: "sqlite3",
     connection: {
-<<<<<<< HEAD
-      filename: "./cars.db3",
-    },
-    useNullAsDefault: true,
-  },
-};
-
-//test
-=======
       filename: "./database/car-dealer.db3",
     },
     useNullAsDefault: true,
@@ -68,4 +54,3 @@ module.exports = {
     },
   },
 };
->>>>>>> ae0ae9e9f60da95fb3c7754c90f7dcbe0b10ac57
