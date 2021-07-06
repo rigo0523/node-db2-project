@@ -1,6 +1,12 @@
 const db = require("../database/dbConfig");
 
-module.exports = { getCountry, getByID, postCountry, updateCar };
+module.exports = {
+  getCountry,
+  getByID,
+  postCountry,
+  updateCountry,
+  deleteCountry,
+};
 
 //GET /api/country
 function getCountry() {
@@ -23,11 +29,17 @@ function postCountry(changes) {
 }
 
 //UPDATE /api/country/:id
-function updateCar(id, changes) {
+function updateCountry(id, changes) {
   return db("country")
     .update(changes)
     .where({ id: id })
     .then((ids) => {
+      //ids does not target the id, use id instead
       return db("country").where({ id }).first();
     });
+}
+
+//DELETE /api/country/:id
+function deleteCountry(id) {
+  return db("country").where({ id }).del();
 }

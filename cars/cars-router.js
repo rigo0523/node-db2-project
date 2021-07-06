@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getByID } = require("../middleware/middleware-stacks");
+const { getByID, validateCars } = require("../middleware/middleware-stacks");
 
 const Cars = require("./cars-helper");
 
@@ -21,7 +21,7 @@ router.get("/:id", getByID(), (req, res, next) => {
 });
 
 //POST /api/cars
-router.post("/", (req, res, next) => {
+router.post("/", validateCars(), (req, res, next) => {
   const changes = req.body;
 
   Cars.addCar(changes)
